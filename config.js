@@ -1,7 +1,7 @@
 // Deliberately insecure test file for ShipGuard verification
 
-const API_KEY = "fake_test_key_4kZFmPqR7vT3wY6zA1bC4dE8fG0hJ2kL5nM7pQ9rS3tU6vW1xY";
-const DATABASE_PASSWORD = "SuperSecret123!";
+const API_KEY = "Kx9ZFmPqR7vT3wY6zA1bC4dE8fG0hJ2kL5nM7pQ9r";
+const DATABASE_PASSWORD = "SuperSecretPass9284XyzQ";
 
 export const dbRules = {
   read: true,
