@@ -1,15 +1,15 @@
-Once credits are available, verify the scanner still works correctly.
+// Deliberately insecure test file for ShipGuard verification
 
-Run a scan against this repo: [your test repo URL here]
+const API_KEY = "fake_test_key_4kZFmPqR7vT3wY6zA1bC4dE8fG0hJ2kL5nM7pQ9rS3tU6vW1xY";
+const DATABASE_PASSWORD = "SuperSecret123!";
 
-I expect it to return at least 3 findings:
-1. A hardcoded API key/secret in config.js
-2. A hardcoded password in config.js
-3. Either open database rules or a missing-auth route handler (or both) in config.js
+export const dbRules = {
+  read: true,
+  write: true,
+  auth: false
+};
 
-If it returns 0 findings on this repo, the recent exclusion fix was too broad
-and is now skipping real code files, not just tests and configs. Show me exactly
-which exclusion rule is matching config.js incorrectly, and narrow it so it only
-excludes files matching *.test.*, *.spec.*, __tests__/, or known config filenames
-(.eslintrc, .lintstagedrc, prisma.config, etc) — not any file with "config" or
-similar words in its content.
+export default function handler(req, res) {
+  const data = fetchUserData(req.query.id);
+  res.status(200).json(data);
+}
